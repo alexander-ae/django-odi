@@ -3,7 +3,7 @@
   <title>Compress Image</title>
 </head>
 <body>
-<form action='#' enctype='multipart/form-data' method='post'>
+<form action='{% url "odi:compress" %}' enctype='multipart/form-data' method='post'>
   {% csrf_token %}
   <input type='file' name='file'>
 
