@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>Compress Image</title>
+</head>
+<body>
+<form action='#' enctype='multipart/form-data' method='post'>
+  {% csrf_token %}
+  <input type='file' name='file'>
+
+  <input type='submit' value='Compress'>
+</form>
+</body>
+</html>
