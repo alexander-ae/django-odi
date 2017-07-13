@@ -13,3 +13,9 @@ Clon de TinyJPG, TinyPNG implementado con motivos educativos
 * pngquant: https://pngquant.org/
 * mozjpeg: https://github.com/mozilla/mozjpeg
 * ImageMagic: https://www.imagemagick.org/script/convert.php
+
+## Screenshots
+
+![django - odi 1](screenshots/django-odi-1.png "Inicio")
+
+![django - odi 2](screenshots/django-odi-2.png "Ejemplo")
