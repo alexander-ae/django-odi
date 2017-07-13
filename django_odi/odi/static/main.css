@@ -9,7 +9,7 @@ form.dropzone {
 
 .dz-message span {
     color: #fff;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 a {
@@ -23,4 +23,18 @@ a:any-link {
 
 li {
     margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: #eee;
+    text-align: center;
 }

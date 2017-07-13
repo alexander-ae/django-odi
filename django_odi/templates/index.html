@@ -2,13 +2,14 @@
 <!doctype html>
 <html>
 <head>
-  <title>Compress Image</title>
+  <title>Django ODI</title>
   <meta charset='utf-8'>
   <link rel='stylesheet' href='{% static "dropzone.min.css" %}'>
   <link rel="stylesheet" href='{% static "main.css" %}'>
 </head>
 
 <body>
+<h1>Compresor de imágenes</h1>
 <form action='{% url "odi:compress" %}' enctype='multipart/form-data' method='post' class='dropzone' id='myDropzone'>
   {% csrf_token %}
   <div class="fallback">
@@ -17,6 +18,8 @@
 </form>
 
 <ul id='ul_images'></ul>
+
+<footer>ver repositorio en <a href='https://github.com/alexander-ae/django-odi' target='_blank'>github</a></footer>
 
 <script src='{% static "dropzone.min.js" %}'></script>
 <script type="text/javascript">
