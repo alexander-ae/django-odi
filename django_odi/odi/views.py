@@ -9,13 +9,11 @@ def home(request):
 
 def upload(request):
     if request.method == 'POST':
-        print(request.POST)
-        print(request.FILES)
         file = request.FILES.get('file')
-        print(file, type(file))
 
         image_data = optimize_image(file)
 
-        return JsonResponse({'url': image_data.get('url')})
+        return JsonResponse({'url': image_data.get('url'), 'original_size': image_data.get('original_size'),
+                             'size': image_data.get('size')})
 
     return render(request, 'index.html')

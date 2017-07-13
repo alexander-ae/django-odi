@@ -31,8 +31,7 @@
 
         init: function () {
             this.on('success', function (file, responseText) {
-                console.log(responseText);
-                ul_images.innerHTML += '<li><a href="' + responseText.url + '" target="_blank">' + file.name + '</a></li>'
+                ul_images.innerHTML += '<li><a href="' + responseText.url + '" target="_blank">' + file.name + '</a> : ' + responseText.original_size + ' / ' + responseText.size + '</li>';
             });
         }
     };
