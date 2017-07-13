@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .utils import optimize_image
 
 
@@ -16,9 +16,6 @@ def upload(request):
 
         image_data = optimize_image(file)
 
-        response = HttpResponse(image_data['image'], content_type="image/jpg")
-        response['Content-Length'] = image_data['size']
-        response['Content-Disposition'] = 'attachment; filename={}'.format(file.name)
-        return response
+        return JsonResponse({'url': image_data.get('url')})
 
     return render(request, 'index.html')

@@ -1,0 +1,13 @@
+body {
+    background: #eee;
+    font-family:"Raleway","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+form.dropzone {
+    background: #44B78B;
+}
+
+.dz-message span{
+    color: #fff;
+    font-size: 20px;
+}

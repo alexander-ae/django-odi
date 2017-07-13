@@ -1,13 +1,41 @@
+{% load static %}
+<!doctype html>
 <html>
 <head>
   <title>Compress Image</title>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='{% static "dropzone.min.css" %}'>
+  <link rel="stylesheet" href='{% static "main.css" %}'>
 </head>
-<body>
-<form action='{% url "odi:compress" %}' enctype='multipart/form-data' method='post'>
-  {% csrf_token %}
-  <input type='file' name='file'>
 
-  <input type='submit' value='Compress'>
+<body>
+<form action='{% url "odi:compress" %}' enctype='multipart/form-data' method='post' class='dropzone' id='myDropzone'>
+  {% csrf_token %}
+  <div class="fallback">
+    <input name='file' type='file'/>
+  </div>
 </form>
+
+<ul id='ul_images'></ul>
+
+<script src='{% static "dropzone.min.js" %}'></script>
+<script type="text/javascript">
+    var ul_images = document.getElementById('ul_images');
+
+    Dropzone.options.myDropzone = {
+        paramName: 'file',
+        autoProcessQueue: true,
+        parallelUploads: 1,
+        acceptedFiles: 'image/jpeg,image/png',
+        dictDefaultMessage: 'Arrastre los archivos aquí',
+
+        init: function () {
+            this.on('success', function (file, responseText) {
+                console.log(responseText);
+                ul_images.innerHTML += '<li><a href="' + responseText.url + '" target="_blank">' + file.name + '</a></li>'
+            });
+        }
+    };
+</script>
 </body>
 </html>
